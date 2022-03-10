@@ -1,0 +1,19 @@
+<div class="container">
+    <form>
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-danger mt-2" type="button" (click)="volverHome()">Volver</button>
+        </div>  
+        <h1>Bienvenido</h1>
+        <div>
+            <input class="form-control" type="text" placeholder="Ingrese su usuario por favor" aria-label="default input example">
+        </div>
+        <div class="input-group mb-3">            
+            <input type="text" class="form-control" placeholder="Ingrese su contraseña por favor" aria-label="Recipient's username" aria-describedby="button-addon2" [type]="hide ? 'password' : 'text'" >
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="hide = !hide"  > 👁 </button>
+        </div> 
+        <div>
+            <button class="btn btn-primary" type="button" id>Iniciar</button>
+        </div>     
+        
+    </form>
+</div>
