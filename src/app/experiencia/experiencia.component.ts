@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EXPERIENCIA } from '../base-datos';
 
 @Component({
   selector: 'experiencia',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienciaComponent implements OnInit {
 
+  experiencia = EXPERIENCIA;
+  
   constructor() { }
 
   ngOnInit(): void {
+
+   
   }
 
 }

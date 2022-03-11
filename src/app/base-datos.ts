@@ -1,0 +1,5 @@
+export const EXPERIENCIA:any[] = [
+    { empresa: "AAAA", puesto:"asdf", ingreso:1111, egreso:2222, descripcion:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus magnam est libero facilis veniam odit recusandae, maxime omnis qui voluptates quas ea, ducimus facere nemo quibusdam nam ratione volup"},
+    { empresa: "BBBB", puesto:"qwre", ingreso:2222, egreso:3333, descripcion:"magnam est libero facilis veniam odit recusandae, maxime omnis qui voluptates quas ea, ducimus facere nemo quibusdam nLorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus am ratione volup"},
+    { empresa: "CCCC", puesto:"asdf", ingreso:3333, egreso:4444, descripcion:"psum dolor sit amet consectetur adipisicing elit. Voluptatibus magnam est libLorem iero facilis veniam odit recusandae, maxime omnis qui voluptates quas ea, ducimus facere nemo quibusdam nam ratione volup"}
+  ];

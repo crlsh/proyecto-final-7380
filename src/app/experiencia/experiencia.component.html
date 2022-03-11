@@ -1,19 +1,27 @@
-<div class="row" >
-    <h1>Experiencia Laboral</h1>
-    <div class="col-lg-11">
-        <ul>
-            <li>
-                <h2>Trabajo <h3>Años</h3></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus magnam est libero facilis veniam odit recusandae, maxime omnis qui voluptates quas ea, ducimus facere nemo quibusdam nam ratione voluptatem! Ut?</p>
-            </li>
-            <li>
-                <h2>Trabajo <h3>Años</h3></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus magnam est libero facilis veniam odit recusandae, maxime omnis qui voluptates quas ea, ducimus facere nemo quibusdam nam ratione voluptatem! Ut?</p>
-            </li>
-            <li>
-                <h2>Trabajo <h3>Años</h3></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus magnam est libero facilis veniam odit recusandae, maxime omnis qui voluptates quas ea, ducimus facere nemo quibusdam nam ratione voluptatem! Ut?</p>
-            </li>
-        </ul>
+<h1>Experiencia</h1>
+
+
+<div *ngFor="let empleo of experiencia">
+
+  <div class="card">
+    <div class="card-horizontal">
+        <div class="img-square-wrapper">
+            <img class="" src="http://via.placeholder.com/300x180" alt="Card image cap">
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">{{empleo.Empresa}}</h4>
+            <h5>{{empleo.puesto}} - {{empleo.ingreso}} - {{empleo.egreso}}</h5>
+            <p class="card-text"> {{empleo.descripcion}} </p>
+        </div>
+    
+    <div class="card-footer">
+        <small class="text-muted">Modo edicion</small>
+        <br>
+        <a href="#" class="btn btn-primary">Editar</a>
+        <a href="#" class="btn btn-primary">Borrar</a>
     </div>
+    </div>
+</div>
+
+
 </div>

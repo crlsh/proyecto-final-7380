@@ -1,3 +1,6 @@
-li{
-    list-style: none;
-}
+h1 {padding:2%;}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+  }
