@@ -13,8 +13,7 @@ export class ExperienciaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
-   
+    
   }
 
 }
