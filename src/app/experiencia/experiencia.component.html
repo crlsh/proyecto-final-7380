@@ -15,10 +15,30 @@
     <div class="card-footer">
         <small class="text-muted">Modo edicion</small>
         <br>
-        <a href="#" class="btn btn-primary">Editar</a>
+ <!--(1) modificar el boton para que llame al metodo open del modal con el template  -->
+        <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Editar</button>
+    
         <a href="#" class="btn btn-primary">Borrar</a>
     </div>
     </div>
 </div>
 
-</div>
+
+  </div>
+
+<!-- (2) crear el ng-template para mostrar en el modal -->
+<ng-template #mymodal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title"> Hola, soy un modal. </h4>
+      <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+        <span>×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+     Aca va el contenido.
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+    </div>
+  </ng-template>
+  

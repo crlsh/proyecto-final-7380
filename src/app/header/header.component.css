@@ -1,1 +1,4 @@
 h1 {padding:2%;}
+:host {
+    background: rgb(148, 148, 201);
+}

@@ -12,9 +12,7 @@ export class HomeComponent implements OnInit {
                                            //Esto importa la clase Router       
   ngOnInit(): void {
   }
-
-  iniciarSesion(){
-    this.router.navigate(['login']); //se agrega la routa a donde navegar    
+  
   }
 
-}
+
