@@ -12,6 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoggedService } from './logged.service';
 
 
 //se crea una const del tipo Routes para guardar todas las rutas
@@ -39,7 +40,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     NgbModule //se importa la clase RouterModule y se le indica la const donde estan las rutas
   ],
-  providers: [],
+  providers: [LoggedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

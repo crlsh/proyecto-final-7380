@@ -1,14 +1,28 @@
-<div class="d-flex justify-content-end">
-    <button class="btn btn-primary me-3" (click)="open(milogin)" >Login</button>
-</div>
+<!-- Cambia el template segun el estado del login (true = logueado) -->
 
-<h1>header</h1>
+<ng-container *ngIf="$estado | async ; then modoLoggedIn; else modoLoggedOut">
+</ng-container>
 
-<h1> Argentina Programa - Proyecto Final V.0</h1>
+<ng-template #modoLoggedIn>
+  <div class="d-flex justify-content-end"> 
+ <button class="btn btn-primary me-1">/</button>
+  <button class="btn btn-primary me-1" (click)="logOut()">Log-Out</button>
+    
+  </div>
+</ng-template>
+
+<ng-template #modoLoggedOut>
+
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-primary me-2" (click)="open(milogin)">Login</button>
+  </div>
+</ng-template>
 
 
+
+<h3> Argentina Programa - #YoProgramo.</h3>
 
 
 <ng-template #milogin let-modal>
-<app-login></app-login>
+  <app-login></app-login>
 </ng-template>

@@ -4,3 +4,9 @@ h1 {padding:2%;}
     display: flex;
     flex: 1 1 auto;
   }
+
+  .card-text{
+    font-size:19px;
+   
+}
+
