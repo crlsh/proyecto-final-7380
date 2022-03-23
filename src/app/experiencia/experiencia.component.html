@@ -1,6 +1,5 @@
 <!-- Titulo -->
 
-
 <div class="card">
 
   <div class="card-horizontal">
@@ -11,7 +10,7 @@
 
     <div *ngIf="$estado | async" class="card-footer">
       <!--(1) modificar el boton para que llame al metodo open del modal con el template  -->
-      <button class="btn btn-lg btn-outline-primary me-2" (click)="open(mymodal)">+</button>
+      <button class="btn btn-lg btn-outline-primary me-2" (click)="open(agregarItem)">+</button>
     </div>
   </div>
 
@@ -37,9 +36,10 @@
       <div *ngIf="$estado | async" class="card-footer">
 
         <!--(1) modificar el boton para que llame al metodo open del modal con el template  -->
-        <button class="btn btn-lg btn-outline-primary me-2" (click)="open(mymodal)">/</button>
+        <button class="btn btn-lg btn-outline-primary me-2" (click)="open(modificarItem)">/</button>
+        <button class="btn btn-lg btn-outline-primary me-2" (click)="open(eliminarItem)">X</button>
 
-        <a href="#" class="btn btn-lg btn-outline-primary me-2">X</a>
+
       </div>
 
     </div>
@@ -48,11 +48,44 @@
 
 </div>
 
-<!-- (2) crear el ng-template para mostrar en el Formulario modal -->
+<!-- Templates para el Formulario modal -->
 
-<ng-template #mymodal let-modal>
+<ng-template #agregarItem let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title"> Hola, soy un modal. </h4>
+    <h4 class="modal-title" id="modal-basic-title"> Agregar Item </h4>
+    <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+      <span>×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Aca va el contenido.
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
+
+
+<ng-template #modificarItem let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title"> Modificar Item </h4>
+    <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+      <span>×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Aca va el contenido.
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
+
+
+
+<ng-template #eliminarItem let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title"> Eliminar Item </h4>
     <button type="button" class="close" (click)="modal.dismiss('Cross click')">
       <span>×</span>
     </button>
