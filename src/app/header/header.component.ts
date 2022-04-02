@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
 import { LoggedService } from '../logged.service';
 import { BehaviorSubject } from 'rxjs';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'header',
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
 
   logIn(): void {
     this.loggedService.LogIn()
+
   }
 
   logOut(): void {
@@ -39,7 +41,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  
+
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -60,6 +62,28 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.$estado.subscribe
+  }
+
+
+  save() { this.modalService.dismissAll(); }
+
+
+
+  openLoginForm() {
+    {
+      const modalRef = this.modalService.open(LoginComponent,
+        {
+          // scrollable: false,
+          windowClass: 'myCustomModalClass',
+          // keyboard: false,
+          // backdrop: 'static'
+        })
+
+      modalRef.result.then((result) => {
+        console.log(result);
+       
+      }, (reason) => { });
+    }
   }
 
 }

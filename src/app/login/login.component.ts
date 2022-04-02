@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoggedService } from '../logged.service';
 import { BehaviorSubject } from 'rxjs';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-login',
@@ -18,10 +19,13 @@ export class LoginComponent implements OnInit {
   $estado: BehaviorSubject<boolean>;
 
   logIn(): void {
-    this.loggedService.LogIn()
+    this.loggedService.LogIn();
+    this.closeModal();
+    
   }
 
-  constructor(private router: Router, private loggedService:LoggedService) { 
+  constructor(private router: Router, private loggedService:LoggedService,
+              public activeModal:NgbActiveModal) { 
 
     this.$estado = loggedService.logged$
   } 
@@ -33,5 +37,11 @@ export class LoginComponent implements OnInit {
   volverHome(){
     this.router.navigate(['']) //se agrega la routa a donde navegar
   }
+
+  closeModal() {
+    this.activeModal.close();
+  }
+
+
 
 }

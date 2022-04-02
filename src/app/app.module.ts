@@ -3,16 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ExperienciaComponent } from './experiencia/experiencia.component';
+
 import { EducacionComponent } from './educacion/educacion.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoggedService } from './logged.service';
+import { BtnAgregarComponent } from './shared/btn-agregar/btn-agregar.component';
+import { BtnEditarComponent } from './shared/btn-editar/btn-editar.component';
+import { BtnEliminarComponent } from './shared/btn-eliminar/btn-eliminar.component';
+import { NavbarComponent } from './header/navbar/navbar.component';
+import { DatosPersonalesComponent } from './header/datos-personales/datos-personales.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
+import { XpComponent } from './xp/xp.component';
+import { ServicioDatosService } from './servicio-datos.service';
+import { XpformComponent } from './xp/xpform/xpform.component'
+
+
 
 
 //se crea una const del tipo Routes para guardar todas las rutas
@@ -26,21 +39,34 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    ExperienciaComponent,
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
     LoginComponent,
-    HomeComponent
-  
+    HomeComponent,
+    BtnAgregarComponent,
+    BtnEditarComponent,
+    BtnEliminarComponent,
+ NavbarComponent,
+ DatosPersonalesComponent,
+ XpComponent,
+ XpformComponent,
+
+ 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    NgbModule //se importa la clase RouterModule y se le indica la const donde estan las rutas
+    NgbModule, //se importa la clase RouterModule y se le indica la const donde estan las rutas
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(DataService),
+  
+  
+    
   ],
-  providers: [LoggedService],
+  providers: [LoggedService, ServicioDatosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

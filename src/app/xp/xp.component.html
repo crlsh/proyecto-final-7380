@@ -1,0 +1,47 @@
+<!-- Titulo -->
+
+
+<ul>
+  <li>
+    <h2>Experiencia</h2>
+
+  </li>
+  <li>
+    <div style=" float: right;" *ngIf="$estado | async">
+
+      <app-btn-agregar (click)="openXpForm([],0)"></app-btn-agregar>      
+    </div>
+  </li>
+</ul>
+
+
+<!-- Rellenar Tarjetas con Info de cada empleo  -->
+
+
+<div *ngFor="let empleo of xps">
+
+  <div class="card">
+    <div class="card-horizontal">
+      <div class="img-square-wrapper col align-self-center" >
+        <img class="" src="http://via.placeholder.com/140x100" alt="Card image cap">
+      </div>
+
+      <div class="card-body">
+        <h3 class="card-title">{{empleo.empresa}}</h3>
+        <h4>{{empleo.puesto}} - {{empleo.ingreso}} - {{empleo.egreso}}</h4>
+        <p class="card-text"> {{empleo.descripcion}} </p>
+      </div>
+
+      <div *ngIf="$estado | async" class="card-footer">
+
+        <!--(1) modificar el boton para que llame al metodo open del modal con el template  -->
+
+  
+        <app-btn-editar (click)="openXpForm(empleo ,1 )"></app-btn-editar>
+
+        <app-btn-eliminar (click)="openXpForm(empleo, 2)">X</app-btn-eliminar>
+      </div>
+    </div>
+  </div>
+
+</div>

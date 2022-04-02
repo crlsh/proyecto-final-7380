@@ -2,3 +2,17 @@ h1 {padding:2%;}
 :host {
     background: rgb(148, 148, 201);
 }
+
+.numberCircle {
+    position:absolute;
+    top:90%;;left:calc(20% - 20px);
+           width: 20%;
+           height: 20%;
+           border-radius: 50%;
+           text-align: center;
+           font-size: 21.6px;
+           border: 2px solid #3498db;
+           color:white;
+           background:#3498db;
+
+       }

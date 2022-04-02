@@ -1,16 +1,40 @@
+<ul>
+    <li>
+      <h2>Educacion</h2>
+  
+    </li>
+    <li>
+      <div style=" float: right;" *ngIf="$estado | async">
+  
+        <app-btn-agregar (click)="openEdForm([],0)"></app-btn-agregar>      
+      </div>
+    </li>
+  </ul>
 
-<div class="row" >
-    <h1>Educación</h1>
-    <div class="col-lg-11">
-        <ul>
-            <li>
-                <h2>Establecimiento <h3>Año Egresado</h3></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus magnam est libero facilis veniam odit recusandae, maxime omnis qui voluptates quas ea, ducimus facere nemo quibusdam nam ratione voluptatem! Ut?</p>
-            </li>
-            <li>
-                <h2>Establecimiento <h3>Año Egresado</h3></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus magnam est libero facilis veniam odit recusandae, maxime omnis qui voluptates quas ea, ducimus facere nemo quibusdam nam ratione voluptatem! Ut?</p>
-            </li>
-        </ul>
+<div *ngFor="let item of educacion">
+
+    <div class="card">
+      <div class="card-horizontal">
+        <div class="img-square-wrapper col align-self-center" >
+          <img class="" src="http://via.placeholder.com/140x100" alt="Card image cap">
+        </div>
+  
+        <div class="card-body">
+          <h3 class="card-title">{{item.institucion }}</h3>
+          <h4>Año de Egreso: {{item.egreso}} </h4>
+          <p class="card-text"> {{item.titulo}} </p>
+        </div>
+  
+        <div *ngIf="$estado | async" class="card-footer">
+  
+          <!--(1) modificar el boton para que llame al metodo open del modal con el template  -->
+  
+    
+          <app-btn-editar (click)="openEdForm(item ,1 )"></app-btn-editar>
+  
+          <app-btn-eliminar (click)="openEdForm(item, 2)">X</app-btn-eliminar>
+        </div>
+      </div>
     </div>
-</div>
+  
+  </div>
